@@ -7,11 +7,12 @@ describe('Nearby Gyms (e2e)', () => {
   beforeAll(async () => {
     await app.ready()
   })
+
   afterAll(async () => {
     await app.close()
   })
 
-  it('should be able to list nearby gyms', async () => {
+  it('should be able list nearby gyms', async () => {
     const { token } = await createAndAuthenticateUser(app, true)
 
     await request(app.server)
@@ -19,8 +20,8 @@ describe('Nearby Gyms (e2e)', () => {
       .set('Authorization', `Bearer ${token}`)
       .send({
         title: 'JavaScript Gym',
-        description: 'Some description',
-        phone: '19991557790',
+        description: 'Some description.',
+        phone: '1199999999',
         latitude: -27.2092052,
         longitude: -49.6401091,
       })
@@ -30,8 +31,8 @@ describe('Nearby Gyms (e2e)', () => {
       .set('Authorization', `Bearer ${token}`)
       .send({
         title: 'TypeScript Gym',
-        description: 'Some description',
-        phone: '19991557790',
+        description: 'Some description.',
+        phone: '1199999999',
         latitude: -27.0610928,
         longitude: -49.5229501,
       })
