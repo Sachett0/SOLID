@@ -8,6 +8,7 @@ describe('Validate Check-in (e2e)', () => {
   beforeAll(async () => {
     await app.ready()
   })
+
   afterAll(async () => {
     await app.close()
   })
@@ -33,7 +34,7 @@ describe('Validate Check-in (e2e)', () => {
     })
 
     const response = await request(app.server)
-      .post(`check-ins/${checkIn.id}/validate`)
+      .patch(`/check-ins/${checkIn.id}/validate`)
       .set('Authorization', `Bearer ${token}`)
       .send()
 

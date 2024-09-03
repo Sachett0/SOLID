@@ -21,7 +21,7 @@ export async function createAndAuthenticateUser(
     password: '123456',
   })
 
-  const { token } = authResponse.body()
+  const { token } = authResponse.body
 
   return { token }
 }
