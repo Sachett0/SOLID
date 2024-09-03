@@ -36,7 +36,7 @@ describe('Check-in metrics (e2e)', () => {
     })
 
     const response = await request(app.server)
-      .get('check-ins/metrics')
+      .get('/check-ins/metrics')
       .set('Authorization', `Bearer ${token}`)
       .send()
 
