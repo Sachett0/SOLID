@@ -46,6 +46,10 @@ describe('Check-in history (e2e)', () => {
         gym_id: gym.id,
         user_id: user.id,
       }),
+      expect.objectContaining({
+        gym_id: gym.id,
+        user_id: user.id,
+      }),
     ])
   })
 })
